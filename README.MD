@@ -1,7 +1,3 @@
-# Task Manager API
-
-This is a REST API for a Task Manager application, built as a test task for a Backend Developer role. It provides user authentication (registration, login, logout) using JWT and a task management system with CRUD operations and status filtering.
-
 ## Technology Stack
 
 - **Language**: Python 3.13
