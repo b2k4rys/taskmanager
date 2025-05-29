@@ -4,18 +4,20 @@ from django.contrib.auth import authenticate, login, logout
 from .serializers import UserSerializer, LoginSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth.models import User
+from rest_framework.permissions import AllowAny
 
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-
+    permission_classes = [AllowAny]
+    
     def perform_create(self, serializer):
-        user = serializer.save()
-        RefreshToken.for_user(user)  
+            user = serializer.save()
+            RefreshToken.for_user(user)
 
 class LoginView(generics.GenericAPIView):
     serializer_class = LoginSerializer
-
+    permission_classes = [AllowAny]
     def post(self, request):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
