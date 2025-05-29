@@ -7,10 +7,6 @@
 - **Environment Management**: Python `venv`, `.env` file for configuration
 - **Dependencies**: Managed via `requirements.txt`
 
-## Setup Instructions
-
-Follow these steps to set up and run the project locally.
-
 ### Prerequisites
 
 - Python 3.13
